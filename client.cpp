@@ -84,7 +84,6 @@ void sendMessage(int fd){
     messageJson["timestamp"] = std::string(getCurrentDateTime());
     messageJson["messageContent"] = std::string(buffer);
     std::string message = messageJson.dump();
-    printf("%s", message.c_str());
     write(fd, message.c_str(), strlen(message.c_str()));
   }
 }
